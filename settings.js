@@ -57,14 +57,14 @@ module.exports = {
     //tlsConfigDisableLocalFiles: true,
 
     // Colourise the console output of the debug node
-    //debugUseColors: true,
+    debugUseColors: true,
 
     // The file containing the flows. If not set, it defaults to flows_<hostname>.json
-    //flowFile: 'flows.json',
+    flowFile: 'flows/flows.json',
 
     // To enabled pretty-printing of the flow within the flow file, set the following
     //  property to true:
-    //flowFilePretty: true,
+    flowFilePretty: true,
 
     // By default, credentials are encrypted in storage using a generated key. To
     // specify your own secret, set the following property.
@@ -72,11 +72,11 @@ module.exports = {
     // Note: once you set this property, do not change it - doing so will prevent
     // node-red from being able to decrypt your existing credentials and they will be
     // lost.
-    //credentialSecret: "a-secret-key",
+    credentialSecret: "a-secret-key",
 
     // By default, all user data is stored in the Node-RED install directory. To
     // use a different location, the following property can be used
-    //userDir: '/home/nol/.node-red/',
+    userDir: 'configs',
 
     // Node-RED scans the `nodes` directory in the install directory to find nodes.
     // The following property can be used to specify an additional directory to scan.
