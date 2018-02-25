@@ -1,1 +1,321 @@
-[{"id":"4f00de5d.a3e81","type":"tab","label":"Flow 1","disabled":false,"info":""},{"id":"3233b34.947e64c","type":"tab","label":"Flow 2","disabled":false,"info":""},{"id":"4701934e.1c3ccc","type":"mqtt-broker","z":"","name":"","broker":"localhost","port":"1884","clientid":"","usetls":false,"compatmode":true,"keepalive":"60","cleansession":true,"willTopic":"","willQos":"0","willPayload":"","birthTopic":"","birthQos":"0","birthPayload":""},{"id":"bcb6f0ae.e04e2","type":"websocket-client","z":"","path":"ws://127.0.0.1:9001","tls":"","wholemsg":"false"},{"id":"dfaeaf1f.8979e","type":"websocket-listener","z":"","path":"ws://127.0.0.1:9001","wholemsg":"true"},{"id":"685c2348.8cf92c","type":"websocket-listener","z":"","path":"ws/test","wholemsg":"false"},{"id":"e7fa1656.f6ef18","type":"mqtt in","z":"4f00de5d.a3e81","name":"","topic":"test","qos":"2","broker":"4701934e.1c3ccc","x":270,"y":280,"wires":[["ae283741.901a38"]]},{"id":"ae283741.901a38","type":"debug","z":"4f00de5d.a3e81","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","x":420,"y":280,"wires":[]},{"id":"114b42d9.8a9e3d","type":"inject","z":"4f00de5d.a3e81","name":"","topic":"","payload":"Oleg","payloadType":"str","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":270,"y":120,"wires":[["7925db91.928644"]]},{"id":"7925db91.928644","type":"mqtt out","z":"4f00de5d.a3e81","name":"","topic":"test","qos":"","retain":"","broker":"4701934e.1c3ccc","x":440,"y":120,"wires":[]}]
+[
+    {
+        "id": "4f00de5d.a3e81",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3233b34.947e64c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "4701934e.1c3ccc",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": ""
+    },
+    {
+        "id": "bcb6f0ae.e04e2",
+        "type": "websocket-client",
+        "z": "",
+        "path": "ws://127.0.0.1:9001",
+        "tls": "",
+        "wholemsg": "false"
+    },
+    {
+        "id": "dfaeaf1f.8979e",
+        "type": "websocket-listener",
+        "z": "",
+        "path": "ws://127.0.0.1:9001",
+        "wholemsg": "true"
+    },
+    {
+        "id": "685c2348.8cf92c",
+        "type": "websocket-listener",
+        "z": "",
+        "path": "ws/test",
+        "wholemsg": "false"
+    },
+    {
+        "id": "7ebae5e9.ab4d0c",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "3ae02529.cf00ba",
+        "type": "alexa-skill",
+        "z": "",
+        "skillname": "my skill",
+        "intents": "[\n  {\n    \"name\": \"ToggleSonoff\",\n    \"options\": {\n      \"utterances\": [\n        \"toggle sonoff\",\n        \"toggle sonof\"\n      ]\n    }\n  }\n]",
+        "clientId": "needsADefault"
+    },
+    {
+        "id": "15cfa671.7e38aa",
+        "type": "alexa-home-conf",
+        "z": "",
+        "username": "Oleg"
+    },
+    {
+        "id": "e7fa1656.f6ef18",
+        "type": "mqtt in",
+        "z": "4f00de5d.a3e81",
+        "name": "",
+        "topic": "stat/sonoff/POWER",
+        "qos": "2",
+        "broker": "4701934e.1c3ccc",
+        "x": 310,
+        "y": 280,
+        "wires": [
+            [
+                "ae283741.901a38"
+            ]
+        ]
+    },
+    {
+        "id": "ae283741.901a38",
+        "type": "debug",
+        "z": "4f00de5d.a3e81",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 672,
+        "y": 286,
+        "wires": []
+    },
+    {
+        "id": "114b42d9.8a9e3d",
+        "type": "inject",
+        "z": "4f00de5d.a3e81",
+        "name": "",
+        "topic": "",
+        "payload": "toggle",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 245,
+        "y": 144,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7925db91.928644",
+        "type": "mqtt out",
+        "z": "4f00de5d.a3e81",
+        "name": "",
+        "topic": "cmnd/sonoff/power",
+        "qos": "",
+        "retain": "",
+        "broker": "4701934e.1c3ccc",
+        "x": 602,
+        "y": 165,
+        "wires": []
+    },
+    {
+        "id": "193658f8.c51da7",
+        "type": "function",
+        "z": "4f00de5d.a3e81",
+        "name": "Toggle",
+        "func": "return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 309,
+        "y": 199,
+        "wires": [
+            [
+                "7925db91.928644"
+            ]
+        ]
+    },
+    {
+        "id": "19e32704.9040b9",
+        "type": "alexa-home",
+        "z": "4f00de5d.a3e81",
+        "conf": "15cfa671.7e38aa",
+        "device": "18393",
+        "acknoledge": true,
+        "name": "Sonoff",
+        "topic": "",
+        "x": 111,
+        "y": 192,
+        "wires": [
+            [
+                "193658f8.c51da7"
+            ]
+        ]
+    },
+    {
+        "id": "95ed578b.075708",
+        "type": "alexa-say",
+        "z": "4f00de5d.a3e81",
+        "name": "",
+        "text": "Oleg Boss",
+        "x": 356,
+        "y": 74,
+        "wires": [
+            [
+                "747a68f1.676248"
+            ]
+        ]
+    },
+    {
+        "id": "f065bd5e.e196",
+        "type": "alexa-http response",
+        "z": "4f00de5d.a3e81",
+        "name": "",
+        "x": 663,
+        "y": 32,
+        "wires": []
+    },
+    {
+        "id": "22e930a6.68417",
+        "type": "alexa-http launch",
+        "z": "4f00de5d.a3e81",
+        "name": "",
+        "skillConfig": "3ae02529.cf00ba",
+        "x": 169,
+        "y": 75,
+        "wires": [
+            [
+                "95ed578b.075708"
+            ]
+        ]
+    },
+    {
+        "id": "60be7ae6.7c36e4",
+        "type": "debug",
+        "z": "4f00de5d.a3e81",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 653,
+        "y": 114,
+        "wires": []
+    },
+    {
+        "id": "747a68f1.676248",
+        "type": "function",
+        "z": "4f00de5d.a3e81",
+        "name": "Stringify",
+        "func": "\nreturn JSON.stringify(msg);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 496,
+        "y": 48,
+        "wires": [
+            [
+                "f065bd5e.e196",
+                "60be7ae6.7c36e4"
+            ]
+        ]
+    }
+]

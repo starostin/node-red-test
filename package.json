@@ -6,6 +6,9 @@
     "start": "node node_modules/node-red/red.js --settings settings.js"
   },
   "dependencies": {
-    "node-red": "^0.18.3"
+    "node-red": "^0.18.3",
+    "node-red-contrib-alexa": "0.0.7",
+    "node-red-contrib-alexa-home-skill": "^0.1.17",
+    "node-red-dashboard": "^2.8.1"
   }
 }
