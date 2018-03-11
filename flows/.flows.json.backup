@@ -19,7 +19,7 @@
         "z": "",
         "name": "",
         "broker": "localhost",
-        "port": "1884",
+        "port": "1883",
         "clientid": "",
         "usetls": false,
         "compatmode": true,
@@ -55,10 +55,10 @@
         "wholemsg": "false"
     },
     {
-        "id": "17f9af41.6ce771",
+        "id": "7ebae5e9.ab4d0c",
         "type": "ui_base",
         "theme": {
-            "name": "theme-dark",
+            "name": "theme-light",
             "lightTheme": {
                 "default": "#0094CE",
                 "baseColor": "#0094CE",
@@ -70,8 +70,7 @@
                 "default": "#097479",
                 "baseColor": "#097479",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
+                "edited": false
             },
             "customTheme": {
                 "name": "Untitled Theme 1",
@@ -81,44 +80,44 @@
             },
             "themeState": {
                 "base-color": {
-                    "default": "#097479",
-                    "value": "#097479",
+                    "default": "#0094CE",
+                    "value": "#0094CE",
                     "edited": false
                 },
                 "page-titlebar-backgroundColor": {
-                    "value": "#097479",
+                    "value": "#0094CE",
                     "edited": false
                 },
                 "page-backgroundColor": {
-                    "value": "#111111",
+                    "value": "#fafafa",
                     "edited": false
                 },
                 "page-sidebar-backgroundColor": {
-                    "value": "#000000",
+                    "value": "#ffffff",
                     "edited": false
                 },
                 "group-textColor": {
-                    "value": "#0eb8c0",
+                    "value": "#1bbfff",
                     "edited": false
                 },
                 "group-borderColor": {
-                    "value": "#555555",
+                    "value": "#ffffff",
                     "edited": false
                 },
                 "group-backgroundColor": {
-                    "value": "#333333",
+                    "value": "#ffffff",
                     "edited": false
                 },
                 "widget-textColor": {
-                    "value": "#eeeeee",
+                    "value": "#111111",
                     "edited": false
                 },
                 "widget-backgroundColor": {
-                    "value": "#097479",
+                    "value": "#0094ce",
                     "edited": false
                 },
                 "widget-borderColor": {
-                    "value": "#333333",
+                    "value": "#ffffff",
                     "edited": false
                 },
                 "base-font": {
@@ -144,33 +143,29 @@
         }
     },
     {
-        "id": "4c69bf46.1c5ee",
-        "type": "ui_tab",
+        "id": "3ae02529.cf00ba",
+        "type": "alexa-skill",
         "z": "",
-        "name": "Tab 1",
-        "icon": "dashboard",
-        "order": 1
+        "skillname": "my skill",
+        "intents": "[\n  {\n    \"name\": \"ToggleSonoff\",\n    \"options\": {\n      \"utterances\": [\n        \"toggle sonoff\",\n        \"toggle sonof\"\n      ]\n    }\n  }\n]",
+        "clientId": "needsADefault"
     },
     {
-        "id": "a8d1af91.d4afb",
-        "type": "ui_group",
+        "id": "15cfa671.7e38aa",
+        "type": "alexa-home-conf",
         "z": "",
-        "name": "Default",
-        "tab": "4c69bf46.1c5ee",
-        "disp": true,
-        "width": "6",
-        "collapse": false
+        "username": "Oleg"
     },
     {
         "id": "e7fa1656.f6ef18",
         "type": "mqtt in",
         "z": "4f00de5d.a3e81",
         "name": "",
-        "topic": "test",
+        "topic": "stat/sonoff/POWER",
         "qos": "2",
         "broker": "4701934e.1c3ccc",
-        "x": 246,
-        "y": 371,
+        "x": 310,
+        "y": 280,
         "wires": [
             [
                 "ae283741.901a38"
@@ -187,8 +182,8 @@
         "console": false,
         "tostatus": false,
         "complete": "payload",
-        "x": 617,
-        "y": 366,
+        "x": 672,
+        "y": 286,
         "wires": []
     },
     {
@@ -197,18 +192,16 @@
         "z": "4f00de5d.a3e81",
         "name": "",
         "topic": "",
-        "payload": "Oleg",
+        "payload": "toggle",
         "payloadType": "str",
         "repeat": "",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 172,
-        "y": 116,
+        "x": 245,
+        "y": 144,
         "wires": [
-            [
-                "7925db91.928644"
-            ]
+            []
         ]
     },
     {
@@ -216,33 +209,24 @@
         "type": "mqtt out",
         "z": "4f00de5d.a3e81",
         "name": "",
-        "topic": "test",
+        "topic": "cmnd/sonoff/power",
         "qos": "",
         "retain": "",
         "broker": "4701934e.1c3ccc",
-        "x": 676,
-        "y": 116,
+        "x": 602,
+        "y": 165,
         "wires": []
     },
     {
-        "id": "9556eab3.a454f8",
-        "type": "ui_button",
+        "id": "193658f8.c51da7",
+        "type": "function",
         "z": "4f00de5d.a3e81",
-        "name": "",
-        "group": "a8d1af91.d4afb",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "label": "button",
-        "color": "",
-        "bgcolor": "",
-        "icon": "",
-        "payload": "star",
-        "payloadType": "flow",
-        "topic": "fa",
-        "x": 474,
-        "y": 274,
+        "name": "Toggle",
+        "func": "return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 309,
+        "y": 199,
         "wires": [
             [
                 "7925db91.928644"
@@ -250,40 +234,87 @@
         ]
     },
     {
-        "id": "ff59bee4.6d5a",
-        "type": "ui_text_input",
+        "id": "19e32704.9040b9",
+        "type": "alexa-home",
         "z": "4f00de5d.a3e81",
-        "name": "",
-        "label": "",
-        "group": "a8d1af91.d4afb",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "mode": "text",
-        "delay": 300,
-        "topic": "fa",
-        "x": 102,
-        "y": 278,
+        "conf": "15cfa671.7e38aa",
+        "device": "18393",
+        "acknoledge": true,
+        "name": "Sonoff",
+        "topic": "",
+        "x": 111,
+        "y": 192,
         "wires": [
             [
-                "f5e11cdb.abc3b"
+                "193658f8.c51da7"
             ]
         ]
     },
     {
-        "id": "f5e11cdb.abc3b",
-        "type": "function",
+        "id": "95ed578b.075708",
+        "type": "alexa-say",
         "z": "4f00de5d.a3e81",
-        "name": "storeData",
-        "func": "var flowContext = flow.set('star', 'test');\nreturn flow.get('star');",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 273,
-        "y": 276,
+        "name": "",
+        "text": "Oleg Boss",
+        "x": 356,
+        "y": 74,
         "wires": [
             [
-                "9556eab3.a454f8"
+                "747a68f1.676248"
+            ]
+        ]
+    },
+    {
+        "id": "f065bd5e.e196",
+        "type": "alexa-http response",
+        "z": "4f00de5d.a3e81",
+        "name": "",
+        "x": 663,
+        "y": 32,
+        "wires": []
+    },
+    {
+        "id": "22e930a6.68417",
+        "type": "alexa-http launch",
+        "z": "4f00de5d.a3e81",
+        "name": "",
+        "skillConfig": "3ae02529.cf00ba",
+        "x": 169,
+        "y": 75,
+        "wires": [
+            [
+                "95ed578b.075708"
+            ]
+        ]
+    },
+    {
+        "id": "60be7ae6.7c36e4",
+        "type": "debug",
+        "z": "4f00de5d.a3e81",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 653,
+        "y": 114,
+        "wires": []
+    },
+    {
+        "id": "747a68f1.676248",
+        "type": "function",
+        "z": "4f00de5d.a3e81",
+        "name": "Stringify",
+        "func": "\nreturn JSON.stringify(msg);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 496,
+        "y": 48,
+        "wires": [
+            [
+                "f065bd5e.e196",
+                "60be7ae6.7c36e4"
             ]
         ]
     }

@@ -16,7 +16,7 @@
 
 // The `https` setting requires the `fs` module. Uncomment the following
 // to make it available:
-//var fs = require("fs");
+var fs = require("fs");
 
 module.exports = {
     // the tcp port that the Node-RED web server is listening on
@@ -136,10 +136,10 @@ module.exports = {
     // See the comment at the top of this file on how to load the `fs` module used by
     // this setting.
     //
-    //https: {
-    //    key: fs.readFileSync('privatekey.pem'),
-    //    cert: fs.readFileSync('certificate.pem')
-    //},
+    https: {
+       key: fs.readFileSync('./cert_key/key.pem'),
+       cert: fs.readFileSync('./cert_key/cert.pem')
+    },
 
     // The following property can be used to cause insecure HTTP connections to
     // be redirected to HTTPS.

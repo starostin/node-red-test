@@ -17,3 +17,6 @@ builds
 **/built_*
 #/composed by grunt
 /nbproject/private/
+/cert_key
+cert_key
+.pem
